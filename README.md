@@ -2,7 +2,15 @@
 
 This project aims to develop a pipeline and wrapper script to compare HCMV from 2 and 6 days post infection through differential expression.
 
-Step 1: downloading SRR paired-end fastq files using sra-toolkit
+Step 1: downloading SRR paired-end fastq files using sra-toolkit: SRR5660030, SRR5660033, SRR5660044, SR5660045
+
+SRR...30: donor 1, 2dpi
+
+SRR...33: donor 1, 6dpi
+
+SRR...44: donor 3, 2dpi
+
+SRR...45: donor 3, 6dpi
 
 ```{r}
 #run in command line

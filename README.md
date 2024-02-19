@@ -4,7 +4,7 @@ This project aims to develop a pipeline and wrapper script to compare HCMV from 
 
 Step 1: downloading SRR paired-end fastq files using sra-toolkit
 
-'''{bash}
-#example for one file:
+```{r}
+#run in command line
 fasterq-dump --split-3 SRR5660030
-'''
+```

@@ -1,4 +1,4 @@
-#args needed: email
+#args needed: email, maybe ref genome id if this is supposed to be that generic
 
 from Bio import Entrez
 from Bio import SeqIO

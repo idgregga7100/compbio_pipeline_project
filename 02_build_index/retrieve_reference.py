@@ -1,4 +1,4 @@
-#args needed: email, maybe ref genome id if this is supposed to be that generic
+#args needed: none, only required input should be the samples!
 
 from Bio import Entrez
 from Bio import SeqIO

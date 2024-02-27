@@ -3,8 +3,16 @@
 library(dplyr)
 library(data.table)
 library(sleuth)
+library(argparse)
+library(stringr)
 
-samples<-c('SRR5660030','SRR5660033','SRR5660044','SRR5660045')
+parser<-ArgumentParser()
+parser$add_argument("-s", "--samples", type="character")
+args<-parser$parse_args()
+samples<-args$samples
+samples<-str_split(samples,',')[[1]]
+
+#samples<-c('SRR5660030','SRR5660033','SRR5660044','SRR5660045')
 
 #create table for sleuth input
 intable<-data.frame(matrix(nrow=length(samples),ncol=3))

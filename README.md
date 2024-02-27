@@ -16,3 +16,10 @@ SRR...45: donor 3, 6dpi
 #run in command line
 fasterq-dump --split-3 SRR5660030
 ```
+
+To run wrapper:
+```{r}
+#list all SRR sample numbers comma-delimited
+#example command
+python3 wrapper.py --samples SRR5660030,SRR5660033 --path SRR_files --output PipelineProject.log
+```

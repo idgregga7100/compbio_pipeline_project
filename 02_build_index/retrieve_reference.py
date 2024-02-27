@@ -29,3 +29,5 @@ for cds in cdsfeatures:
 o=open('NC_006273.2_reference.fasta','w')
 SeqIO.write(handle=o,sequences=rnarecords,format='fasta')
 o.close()
+
+print(len(cdsfeatures))

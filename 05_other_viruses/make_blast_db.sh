@@ -8,4 +8,7 @@
 #class ex: makeblastdb -in ncbi_dataset/data/genomic.fna -out coronaviridae -title coronaviridae -dbtype nucl
 
 #download Betaherpesvirinae subfamily sequences for database
-datasets download virus genome taxon betaherpesvirinae --refseq --include genome > betaherpesvirinae_download.zip
+datasets download virus genome taxon betaherpesvirinae --refseq --include genome 
+unzip ncbi_dataset.zip
+makeblastdb -in ncbi_dataset/data/genomic.fna -out betaherpesvirinae -title betaherpesvirinae -dbtype nucl
+

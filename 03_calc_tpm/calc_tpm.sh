@@ -15,6 +15,10 @@ do
             samples=${samples//,/ }
 	        shift 2
 	        ;;
+      -o | --outdir)
+	        outdir=$2
+	        shift 2
+	        ;;
       *)  # No more options
          	shift
 	        break
@@ -28,8 +32,8 @@ done
 for sample in $samples
 do
 time kallisto quant \
--i index.idx \
--o ${sample} \
+-i ${outdir}/index.idx \
+-o ${outdir}/${sample} \
 -b 30 \
 -t 4 \
 ${path}/${sample}_1.fastq ${path}/${sample}_2.fastq

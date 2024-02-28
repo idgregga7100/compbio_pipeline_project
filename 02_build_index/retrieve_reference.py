@@ -1,4 +1,16 @@
 #args needed: none, only required input should be the samples!
+#nope jk outdir
+import argparse
+import sys
+
+#function to parse command line arguments
+def check_arg(args=None):
+    parser.add_argument('-o','--outdir',help='output directory',required='True')
+    return parser.parse_args(args)
+
+#retrieve command line arguments and assign to variables
+args=check_arg(sys.argv[1:])
+outdir=args.outdir
 
 from Bio import Entrez
 from Bio import SeqIO
@@ -26,7 +38,7 @@ for cds in cdsfeatures:
     rnarecords.append(rec)
 
 #write out fasta with each cds as entry with refseq protein_id as the label
-o=open('NC_006273.2_reference.fasta','w')
+o=open(outdir+'NC_006273.2_reference.fasta','w')
 SeqIO.write(handle=o,sequences=rnarecords,format='fasta')
 o.close()
 

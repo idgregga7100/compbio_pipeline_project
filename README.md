@@ -17,6 +17,8 @@ SRR...45: donor 3, 6dpi
 fasterq-dump --split-3 SRR5660030
 ```
 
+Clone this github, and run the wrapper script. It will produce various intermediate files, and a log file summarizing the analysis.
+
 To run wrapper:
 ```{r}
 #list all SRR sample numbers comma-delimited

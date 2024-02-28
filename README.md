@@ -19,9 +19,9 @@ fasterq-dump --split-3 SRR5660030
 
 Clone this github, and run the wrapper script. It will produce various intermediate files, and a log file summarizing the analysis.
 
-To run wrapper:
+Run the wrapper script inside the github directory (/home/user/compbio_pipeline_project/wrapper.py). Arguments required: sample numbers, sample directory, output directory, log file name
 ```{r}
 #list all SRR sample numbers comma-delimited
 #example command
-python3 wrapper.py --samples SRR5660030,SRR5660033 --path SRR_files --output PipelineProject.log
+python3 wrapper.py --samples SRR5660030,SRR5660033,SRR5660044,SRR5660045 --inpath /home/igregga/compbio_pipeline_project/SRR_files --outdir /home/igregga/PipelineProject_Gregga_Isadore --outlog PipelineProject.log
 ```

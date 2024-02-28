@@ -21,9 +21,9 @@ do
 done
 
 #download Betaherpesvirinae subfamily sequences for database
-#CANNOT figure out how to get this to download into a different dir so FINE
+#CANNOT figure out how to get this to download into a different dir so we're just gonna move into outdir
+cd ${outdir}
 datasets download virus genome taxon betaherpesvirinae --refseq --include genome 
 unzip ncbi_dataset.zip
-mv ncbi_dataset ${outdir} 
 makeblastdb -in ${outdir}/ncbi_dataset/data/genomic.fna -out ${outdir}/betaherpesvirinae -title betaherpesvirinae -dbtype nucl
 

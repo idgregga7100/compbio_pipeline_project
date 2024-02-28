@@ -35,7 +35,10 @@ for (i in 1:length(samples)){
   }
   intable[i,3]<-samples[i]
 }
-str_sub(intable$samples,start=0,end=0)<-paste(outdir,'/',sep='')
+
+for (sample in intable$samples){
+  str_sub(intable$sample,start=0,end=0)<-paste(outdir,'/',sep='')
+}
   
 fwrite(intable,paste(outdir,'/intable.txt',sep=''),quote=F,row.names=F,sep='\t')
 

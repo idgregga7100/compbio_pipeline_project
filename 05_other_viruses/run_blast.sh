@@ -18,4 +18,4 @@ do
      esac
 done
 
-tblastn -query ${outdir}/proteins.fasta -db ${outdir}/betaherpesvirinae -out ${outdir}blastresults.tsv -max_hsps 1 -outfmt '6 sacc pident length qstart qend sstart send bitscore evalue stitle'
+tblastn -query ${outdir}/proteins.fasta -db ${outdir}/betaherpesvirinae -out ${outdir}/blastresults.tsv -max_hsps 1 -outfmt '6 sacc pident length qstart qend sstart send bitscore evalue stitle'

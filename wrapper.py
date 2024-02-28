@@ -56,7 +56,7 @@ command='Rscript 04_find_diffex/use_sleuth.R --samples '+samples+' --outdir '+ou
 subprocess.run(command,shell=True)
 
 f=open(outdir+'/sleuth_fdr0.05.txt','r')
-diffex=f.read().rstrip()
+diffex=f.read()
 log.write(diffex)
 f.close()
 
@@ -66,7 +66,8 @@ subprocess.run('./05_other_viruses/make_blast_db.sh --outdir '+outdir,shell=True
 subprocess.run('./05_other_viruses/run_blast.sh --outdir '+outdir,shell=True)
 
 f=open(outdir+'/blastresults.tsv','r')
-blast=f.read().rstrip()
-log.write(blast[0:10])
+blast=f.read().rstrip().split('\n')
+log.write('\t'.join(['sacc','pident','length','qstart','qend','sstart','send','bitscore','evalue','stitle','\n']))
+log.write('\n'.join(blast[0:10]))
 
 log.close()

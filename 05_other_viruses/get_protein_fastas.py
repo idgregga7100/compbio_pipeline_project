@@ -6,6 +6,7 @@ import sys
 
 #function to parse command line arguments
 def check_arg(args=None):
+    parser=argparse.ArgumentParser(description='differential expression pipeline')
     parser.add_argument('-o','--outdir',help='output directory',required='True')
     return parser.parse_args(args)
 

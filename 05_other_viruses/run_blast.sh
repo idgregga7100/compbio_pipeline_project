@@ -4,5 +4,18 @@
 #max_hsps 'Setting it to one will show only the best HSP for every query-subject pair'
 #want these for top ten hits:
 #sacc pident length qstart qend sstart send bitscore evalue stitle
+while :
+do
+    case "$1" in
+      -o | --outdir)
+	        outdir=$2
+	        shift 2
+	        ;;
+      *)  # No more options
+         	shift
+	        break
+	        ;;
+     esac
+done
 
-tblastn -query proteins.fasta -db betaherpesvirinae -out blastresults.tsv -max_hsps 1 -outfmt '6 sacc pident length qstart qend sstart send bitscore evalue stitle'
+tblastn -query ${outdir}/proteins.fasta -db ${outdir}/betaherpesvirinae -out ${outdir}blastresults.tsv -max_hsps 1 -outfmt '6 sacc pident length qstart qend sstart send bitscore evalue stitle'

@@ -25,3 +25,5 @@ Run the wrapper script inside the github directory (/home/user/compbio_pipeline_
 #example command
 python3 wrapper.py --samples SRR5660030,SRR5660033,SRR5660044,SRR5660045 --inpath /home/igregga/compbio_pipeline_project/SRR_files --outdir /home/igregga/PipelineProject_Gregga_Isadore --outlog PipelineProject.log
 ```
+
+Dependencies: this pipeline uses Biopython Seq.IO, Entrez, Seq, and SeqRecord; python packages argparse, sys, subprocess, os, and statistics; R packages dplyr, stringr, data.table, argparse, and sleuth; Unix command line tools kallisto, datasets, and blast+ (makeblastdb and tblastn).

@@ -38,7 +38,7 @@ for cds in cdsfeatures:
     rnarecords.append(rec)
 
 #write out fasta with each cds as entry with refseq protein_id as the label
-o=open(outdir+'NC_006273.2_reference.fasta','w')
+o=open(outdir+'/NC_006273.2_reference.fasta','w')
 SeqIO.write(handle=o,sequences=rnarecords,format='fasta')
 o.close()
 

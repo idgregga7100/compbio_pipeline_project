@@ -34,7 +34,7 @@ os.system('mkdir '+outdir)
 #nooooo no i should add it as a real argumenttttt fine
 
 #open log file to write
-log=open(outdir+outlog,'a')
+log=open(outdir+'/'+outlog,'a')
 
 #02_build_index, need to send to outdir
 step2=subprocess.check_output('python3 02_build_index/retrieve_reference.py --outdir '+outdir,shell=True,universal_newlines=True)
@@ -55,7 +55,7 @@ log.write(step3)
 command='Rscript 04_find_diffex/use_sleuth.R --samples '+samples+' --outdir '+outdir
 subprocess.run(command,shell=True)
 
-f=open(outdir+'sleuth_fdr0.05.txt','r')
+f=open(outdir+'/sleuth_fdr0.05.txt','r')
 diffex=f.read().rstrip()
 log.write(diffex)
 f.close()
@@ -65,7 +65,7 @@ subprocess.run('python3 05_other_viruses/get_protein_fastas.py --outdir '+outdir
 subprocess.run('./05_other_viruses/make_blast_db.sh --outdir '+outdir,shell=True)
 subprocess.run('./05_other_viruses/run_blast.sh --outdir '+outdir,shell=True)
 
-f=open(outdir+'blastresults.tsv','r')
+f=open(outdir+'/blastresults.tsv','r')
 blast=f.read().rstrip()
 log.write(blast[0:10])
 
